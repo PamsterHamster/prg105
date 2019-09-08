@@ -1,4 +1,3 @@
-
 """Complete all of the TODO directions
     The number next to the TODO represents the chapter
     and section in your textbook that explain the required code
@@ -32,16 +31,13 @@ print(a > 3)
 print(b > 4)
 
 # 2_Answer
-input(c == b)
 print(a == b)
 
 # 3_Answer
-input(b != c)
 print(b != c)
 
 # 4_Answer
-input(c <= a)
-print(c  <= a)
+print(c <= a)
 
 # TODO 3.2 the if else statement
 print("=" * 10, "Section 3.2 if-else", "=" * 10)
@@ -59,12 +55,11 @@ else:
 print("=" * 10, "Section 3.3 comparing strings", "=" * 10)
 # Complete the code below so that if the user input matches the password
 # it will display "that is correct" otherwise display "that is not correct"
-password = "narwhals"
-user_password = input("Please enter the password:  ")
+user_password = "narwhals"
 
-user_password = int(input("Please enter the password: "))
-if user_password == narwhals:
-    print("You are correct. Please proceed to the next step")
+password = input("Please enter the password:  ")
+if password == user_password:
+    print("You are correct.")
 else:
     print("That is not correct.")
 
@@ -82,16 +77,18 @@ number4 = 4
 number5 = 5
 
 number = int(input("Please enter a number between 1 and 5: "))
-if number ==1:
-    print("That is not a valid number")
-elif number ==2:
+if number == 1:
+    print("I")
+elif number == 2:
     print("II")
-elif number ==3:
+elif number == 3:
     print("III")
-elif number ==4:
+elif number == 4:
     print("IV")
 elif number >= 5:
-    print("That is not a valid number")
+    print("V")
+else:
+    print("That is not a valid number.")
 
 # TODO 3.5 a series of conditions
 print("=" * 10, "Section 3.5 multiple conditions", "=" * 10)
@@ -103,6 +100,7 @@ print("=" * 10, "Section 3.5 multiple conditions", "=" * 10)
 
 # NOTE: You cannot search the etextbook by page number, so I cannot see this example :(
 # Variables of starting ages
+"""
 SENIOR = 62
 Regular = 12 to 61
 Medium child = 4 to 11
@@ -122,35 +120,33 @@ Regular age >=12 <=61 then price $12.89
 Medium child A age ==4 then price $.99
 Medium child B age > 4 < 12 then price $.99 *each year < 12
 Small child age > 0 < 4
-
+"""
 customer_age = int(input("How old is the customer?   "))
 cost = 0  # initializing cost, assign the correct price to this variable
 # Complete the code here to determine the correct cost based on age
 
-age = int("How old is the customer : ")
 # Determine the price
-if age >=62
+if customer_age >= 62:
     print("Your cost for a customer who is " + str(customer_age) + " years old")
     print("is $9.89")
 
 else:
-    if age >= 12 <= 61
-    print("Your cost for a customer who is " + str(customer_age) + " years old")
-    print("is $12.89")
+    if customer_age >= 12 <= 61:
+        cost = 12.89
+        print("Your cost for a customer who is " + str(customer_age) + " years old")
+        print("is $12.89")
 
     else:
-        if age > 4 < 12 then format(INSERT FORMULA)
-        print("Your cost for a customer who is " + str(customer_age) + " years old")
-            print("is + format(.99 + 11 - customer_age, ",.2f"))
+        if customer_age >= 3 <= 11:
+            # cost = customer_age * .99 per age year up to age 11
+
+            print("Your cost for a customer who is " + str(customer_age) + " years old")
+            print("is " + format(.99 + 11 - customer_age, ",.2f"))
+
 
         else:
-            if customer_age ==4
-            print("Your cost for a customer who is " + str(customer_age)) + " years old")
-            print("is + $.99")
-
-                else:
-                    if age >= 0 <= 3
-                    print("Your price is $0. Eat for free!")
+            if 0 < customer_age < 3:
+                print("Your price is $0. Eat for free!")
 
 # Output, correctly formatted -- leave this code to display the result
 print("Your cost for a customer who is " + str(customer_age) + " years old")
@@ -165,17 +161,17 @@ print("=" * 10, "Section 3.5 logical operators", "=" * 10)
 d = 10
 e = 10
 f = 12
+
 # 1_Answer
-if d == e and f > d:
-print("d is equal to e and f is greater than d")
+print(d == e and f > d)
 
 # 2_Answer
-if e < f or d > f :
-    print("e is less than f or d is greater than f ")
+print(e < f or d > f)
 
 # 3_Answer
-if not(f >= d or e):
-    print("if f is greater than or equal to d or e then I am almost finished with this exercise")
+# print(not(f >= d or e):
+# CORRECTED VERSION
+print(f != d)
 
 # TODO 3.6 Boolean variable
 print("=" * 10, "Section 3.6 boolean variables", "=" * 10)
@@ -186,60 +182,29 @@ print("=" * 10, "Section 3.6 boolean variables", "=" * 10)
 tired = True
 hungry = False
 # Variables
+"""  
 tired == close eyes
 hungry == crying
 tired + hungry == close eyes and crying
 not tired = eyes open
 not hungry = quiet
 not hungry or tired = quiet and eyes open
+"""
 
-if(baby == tired):
+Baby_status = input("Is baby tired?: ")
+if tired == "yes":
     print("Eyes closed ")
-if (baby != tired):
+else:
     print("Eyes open ")
+Baby_status = input("Is baby hungry?: ")
+if hungry == "yes ":
+    print("Crying")
+else:
+    print("Quiet")
+"""
+        if tired and hungry:
+            print("Eyes closed and crying ")
 
-    if(baby == hungry):
-        print(Crying)
-    if(baby != hungry):
-        print("Quiet ")
-
-            if(baby tired and hungry):
-                print("Eyes closed and crying ")
-
-                if(baby not(hungry or tired):
-                    print("The baby is quiet and the eyes open")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if not hungry or tired:
+                print("The baby is quiet and the eyes open")"""
 
