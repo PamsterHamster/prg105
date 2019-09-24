@@ -36,14 +36,11 @@ def print_tableofresults(score1, score2, score3, score4, score5):
 
 
 def main():
-    score1, score2, score3, score4, score5 = ask_for_scores():
+    score1, score2, score3, score4, score5 = ask_for_score()
     print_tableofresults(score1, score2, score3, score4, score5)
 
 
 main()
-
-
-
 
 # Display
 # print()
