@@ -165,6 +165,14 @@ def main3():
     square(my_number)
 
 
+def square(number):
+    result = number * number
+    print(result)
+
+
+main3()
+
+
 # Definition of the my_number function
 def main4():
     num_one = 5
@@ -191,7 +199,13 @@ print("=" * 10, "Section 5.5 passing multiple arguments", "=" * 10)
 # total = one + two
 # print(total)
 
-def main4():
+# Call the main function
+
+
+main4()
+
+"""
+def main():
     num_one = 5
     num_two = 7
     add(num_one, num_two)
@@ -204,6 +218,7 @@ def add(one, two):
 
 # Call the main function
 main4()
+"""
 
 # TODO 5.7 value returning functions
 print("=" * 10, "Section 5.7 value returning functions", "=" * 10)
@@ -218,14 +233,14 @@ PI = 3.14
 # import random
 # import math
 
-def main5():
+def main7():
     # Get a random number
-    number_r = random.randint(1, 10)
+
     r = random.randint(1, 10)
     r2 = r * r
     # Display the number
     area(r2)
-    ##print("The number is", number_r) Note: When I try to put into """ form (my first attempt) everything turns green! Why?
+    # print("The number is", number_r) Note: When I try to put into """ form (my first attempt) everything turns green! Why?
 
 
 def area(radius_squared):
@@ -234,7 +249,7 @@ def area(radius_squared):
     print(format(my_area, ",.2f"))
 
 
-main5()
+main7()
 
 # TODO 5.8 value returning functions
 print("=" * 10, "Section 5.8 value returning functions", "=" * 10)
@@ -246,14 +261,11 @@ print("=" * 10, "Section 5.8 value returning functions", "=" * 10)
 def main6():
     # Get the user's physical information
 
-    my_answer = BMI(height * weight)
-
     print("This program will calculate your BMI")
     height = float(input("What is your height in inches?  "))
     weight = float(input("What is your weight in pounds? "))
 
     # TODO call the bmi function and assign the result to a variable named answer
-    main6()
     my_answer = bmi(height, weight)
     # TODO print the variable answer, make sure to format it to 1 decimal place
     print(format(my_answer, ",.1f"))
@@ -279,4 +291,3 @@ number_to_round = 4.243
 # My Attempt
 print(math.ceil(number_to_round))
 # Call the main function
-main()
