@@ -1,5 +1,6 @@
 # math from file input
 # Calculate the avg of all the numbers stored in the numbers.txt
+# THIS IS RESUBMISSION
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
         total = 0
         numberoflines = 0
         line = numbers_file.readline()
+        line = line.rstrip('\n')
 
         while line != "":
             numberoflines += 1
@@ -18,9 +20,8 @@ def main():
             line = numbers_file.readline()
 
         average = total / numberoflines
-        print(format(average, '.2f'))
-
-    numbers_file.close()
+        numbers_file.close()
+        print("Your average is " + format(average, '.2f'))
 
 
 main()
