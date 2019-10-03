@@ -125,7 +125,6 @@ while again == 'y':
 main()
 """
 
-# FROM HERE ON ITS CONFUSING. I NEED TO WATCH SOME TUTORIALS..THE REST OF THESE EXERCISES SEEM TO BUILD ON ONE ANTOTHER
 
 # 2) Get the index of "May" from the months list and print it on screen
 month_index = months.index("May")
