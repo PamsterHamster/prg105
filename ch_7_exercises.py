@@ -15,16 +15,16 @@ print(days)
 
 # 2) Create a list with 5 items, set them all to 0, use the Repetition Operator ( * )
 numbers = [0, 0, 0, 0, 0]
-numbers = [0] * 5
-print(numbers)
+number = [0] * 5
+print(number)
 
 # 3) Print the contents of your days list using the for operator
-for n in days:
-    print(n)
+for day in days:
+    print(day)
 
 # 4) Print the list item that holds the value Saturday from the days list by using it's index
 
-print(days[5])
+print(days[6])
 
 """
 index = 0
@@ -35,11 +35,16 @@ while index < 7:
 
 # 5) Create a variable called size to hold the length of the list days using the len function
 size = len(days)
+print(size)
+
+"""
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satruday', 'Sunday']
 index = 0
 while index < len(days):
     print(days[index])
     index += 1
+# FIRST TRY WAS ABOVE
+"""
 
 # 6) Concatenate the two following lists together, storing the value in list3 - remove the """ """ to test
 
@@ -60,13 +65,18 @@ print(work_days)
 print("=" * 10, "Section 7.4 using the in operator", "=" * 10)
 
 # Test to see if "Tue" is in the list days - display "yes, Tue is in the list" or "no, Tue is not in the list"
+if "Tue" in days:
+    print("Yes, Tue is in the list. ")
+else:
+    print("No, Tue is not in the list. ")
+
 """
 def main():
     search = input('Enter the day you are looking for: ')
 
     # Determine if that day is in the list
     if search in work_days:
-        print(search, 'Yes,' + work_daysday + 'is in the list')
+        print(search, 'Yes,' + work_days + 'is in the list')
     else:
         print(search, 'No,' + work_days + 'is not in the list')
 
@@ -78,10 +88,15 @@ main()
 print("=" * 10, "Section 7.5 list methods and functions", "=" * 10)
 
 # 1) Use append() to append the last three months of the year to the list months.
-month_list = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept']
+months = lst = (['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept'])
+months.append("Oct")
+months.append("Nov")
+months.append("Dec")
+print(months)
 
+""" 
+# First attempt below
 def main():
-
     # WHY does the month_list below turn gray? If it's NOT indented, it turns black...
     month_list = list(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept'])
     # Create variable to control te loop
@@ -108,47 +123,75 @@ while again == 'y':
 
     # Call the main function
 main()
+"""
 
 # FROM HERE ON ITS CONFUSING. I NEED TO WATCH SOME TUTORIALS..THE REST OF THESE EXERCISES SEEM TO BUILD ON ONE ANTOTHER
 
 # 2) Get the index of "May" from the months list and print it on screen
+month_index = months.index("May")
+print(month_index)
 
-# 3) Sort list3 from exercise 7.2 and print the results on screen
+# 3) Sort list3 from exercise 7.2 and print the results on screen  p.359
+list3.sort()
+print(list3)
 
-# 4) Reverse the order of list3
+# 4) Reverse the order of list3  p361
+list3.reverse()
+print(list3)
 
 # 5) Delete the number 5 from list3 and print the list(remember we reversed the list)
+del list3[5]
+print(list3)
 
 # 6) Print the maximum value from list 3
-
+print(max(list3))
 
 # TODO 7.6 Copying Lists
 print("=" * 10, "Section 7.6 copying lists", "=" * 10)
 # Copy the list months to the variable months_of_the_year
 # Print the values in months_of_the_year
-
+months_of_the_year = months
+print(months)
 
 # TODO 7.7 Processing lists
 print("=" * 10, "Section 7.7 processing lists", "=" * 10)
 # 1) Total the values in list3 and print the results
+total = 0
+for item in list3:
+    total += 3
+    print("Total = " + str(total))
 
 # 2) Get the average of values in list3 and print the results
+print("Average = " + format(total / len(list3), ",.2f"))
 
-# 3) Open the file states.txt in read mode,
+# 3) Open the file states.txt in read mode,  p373
+infile = open('states.txt', 'r')
+
 # -- read the contents of the file into the list states_list
-# -- print the contents of states_list on screen
+states_list = infile.readlines
 
+# -- print the contents of states_list on screen
+print(states_list)
+infile.close()
 
 # TODO 7.8 Two-Dimensional Lists
 print("=" * 10, "Section 7.8 two-dimensional lists", "=" * 10)
 # 1) Create a new two dimensional list that has the months of the year
 #     and the days in each month during a non leap year
-#     For example, the first entry should be: January, 31
+#     For example, the first entry should be: January, 31    p376
+
+months_days = [['Jan', '31'], ['Feb', '28'], ['Mar', '31'], ['Apr', '30'], ['May', '31'], ['June', '30'],
+               ['July', '31'], ['Aug', '31'], ['Sep', '30'], ['Oct', '31'], ['Nov', '30'], ['Dec', '31']]
 
 # 2) Print the contents of the entire list
+for item in months_days:
+    print(item)
 
 # 3) Print just the values for index 3,0 and 3,1
+print(months_days[3][0], months_days[3][1])
 
 # TODO 7.9 Tuples
 print("=" * 10, "Section 7.9 tuples", "=" * 10)
 # Create a tuple using the months list as its data source
+months_tuple = tuple(months)
+print(months_tuple)
