@@ -18,7 +18,7 @@ def main():
     # print(len(phrase))
     tele_final = ""
     for letter in phrase:
-        for iten in range(0, len(standard)):
+        for item in range(0, len(standard)):
             if letter.upper() == standard[item]:
                 tele_final += (alpha[item] + " ")
 
@@ -61,6 +61,6 @@ def phnum(pho_number):
 
 
 pho_number = '555-GET-FOOD'
-new_num = pho_number
+newalpha_num = pho_number
 print()
 """
