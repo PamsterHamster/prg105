@@ -5,6 +5,8 @@
     Your file should compile error free
     Submit your completed file
 """
+import pickle
+
 # TODO 9.1 Dictionaries
 print("=" * 10, "Section 9.1 dictionaries", "=" * 10)
 
@@ -13,6 +15,7 @@ birthdays = {'Meri': 'May 16', 'Kathy': 'July 14'}
 birthdays['Pam'] = 'July 6'
 birthdays['Vicki'] = 'October 26'
 birthdays['Teri'] = 'December 15'
+print(birthdays)
 
 
 # 2) Print Meri's Birthday
@@ -60,29 +63,33 @@ print(miles_ridden.popitem())
 # TODO 9.2 Sets
 print("=" * 10, "Section 9.2 sets", "=" * 10)
 # 1) Create an empty set named my_set
-myset = set()
+my_set = set()
 # 2) Create a set named days that contains the days of the week
-myset = set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+myset = {'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'}
 # 3) Get the number of elements from the days set and print it
 len(myset)
-print(len)
+print(len(myset))
 # 4) Remove Saturday and Sunday from the days set
-myset.remove(6, 7)
-# 5) Determine if 'Mon' is in the days set  #DO THIS
+myset.remove('Saturday')
+myset.remove('Sunday')
+print(myset)
 
+# 5) Determine if 'Mon' is in the days set  #DO THIS
+if 'Mon' in myset:
+    print('Mon')
+else:
+    print('Entry not found')
 
 # TODO 9.3 Serializing Objects (Pickling)
 print("=" * 10, "Section 9.3 serializing objects using the pickle library", "=" * 10)
-# 1) Import the pickle library at the top of this file # WHERE IS IT??? NOT THERE
-
+# 1) Import the pickle library at the top of this file
 # 2) Create the output file log and open it for binary writing
-outputfile = open('NAMEOFFILE.dat'. 'wb')
+output_file = open('pickle.dat', 'wb')
 
 # 3) Pickle the miles_ridden dictionary and output it to the log file P475
-import pickle
 
 miles_ridden = {'June 1': 25, 'June 2': 20, 'June 3': 38, 'June 4': 12, 'June 5': 30, 'June 7': 25}
-output_file = open('NAMEOFFILE.dat', 'wb')
 pickle.dump(miles_ridden, output_file)
+
 # 4) Close the log file
 output_file.close()
