@@ -16,30 +16,25 @@ class Dice:
     # The __init__ method initializes the side up data attribute with sides 1-6.
 
     def __init__(self):
-        self.sideup1 = '1'  # Is it incorrect to do self.sideup + the number? Is self.sideup a pre-set thing?
-        self.sideup2 = '2'
-        self.sideup3 = '3'
-        self.sideup4 = '4'
-        self.sideup5 = '5'
-        self.sideup6 = '6'
+        self.__sideup = '1'  # Is it incorrect to do self.sideup + the number? yes
 
     # The toss method generates a random number in the range of 0 through 7. If the number is 0, then sideup is set
     # to '1'. If the number is 1, then sideup is set to '2', etc.
 
     def roll(self):
-        if random.randint(0, 7) == 0:  # Is 7 the correct number to maximize the roll 1-6 since 0=1?
-            self.__sideup1 = '1'
+        if random.randint(0, 7) == 0:  # Is 7 the correct number to maximize the roll 1-6 since 0=1? yes
+            self.__sideup = '1'
         elif random.randint(0, 7) == 1:
-            self.__sideup2 = '2'
+            self.__sideup = '2'
         elif random.randint(0, 7) == 2:
-            self.__sideup3 = '3'
+            self.__sideup = '3'
         elif random.randint(0, 7) == 3:
-            self.__sideup4 = '4'
+            self.__sideup = '4'
         elif random.randint(0, 7) == 4:
-            self.__sideup5 = '5'
+            self.__sideup = '5'
         else:
-            random.randint(0, 6) == 5:
-            self.__sideup6 = '6'
+
+            self.__sideup = '6'
 
     def get_sideup(self):
         return self.__sideup
@@ -56,7 +51,7 @@ def main():
     # Toss the dice
     print("I am going to toss the dice ten times: ")
     for count in range(10):
-        my_dice.toss()
+        my_dice.roll()
 
     # Display the side of the dice that is facing up.
     print("This side is facing up: ", my_dice.get_sideup())
