@@ -78,7 +78,6 @@ class MyGUI3:
         self.top_frame.pack()
         self.bottom_frame.pack()
 
-
     # Create an instance of MyGUI3
 
 
@@ -189,9 +188,6 @@ class InchesConverterGUI:
         #   Convert centimeters to a string and store it in the StringVar object. This will automatically update
         #   the centimeters_label widget
         self.value.set(centimeters)
-
-        #   Display results in an info dialog box
-    #   tkinter.messagebox.show.info('Results', str(inches) + 'inches is equal to ' + str(centimeters) + 'centimeters')
 
     # Create instance of the InchesConverterGUI class.
 
