@@ -1,11 +1,10 @@
-
-
 """
     Complete all of the TODO directions
     The number next to the TODO represents the chapter
     and section in your textbook that explain the required code
     Your file should compile error free
     Submit your completed file
+    Done Dec09
 """
 
 # TODO 11.1 Introduction to Inheritance
@@ -70,7 +69,7 @@ class SingleFamilyHouse(Dwelling):
     def get_garagetype(self):
         return self.__garage_type
 
-    def get_yardsize(self):
+    def get_yard_size(self):
         return self.__yard_size
 
     # Demonstrate the SingleFamilyHome class, no need to import because you are in the same file  FINISH THIS SECTION!
@@ -80,8 +79,9 @@ class SingleFamilyHouse(Dwelling):
 def main():
     # 7) In main, create an object from the Single_family_home class with the following information:
     #  6 rooms, 1200 square feet, 1 floor, single car garage, .25 acres
-    avail_for_sale = SingleFamilyHouse.Dwelling('6', 1200, 1, 'single', .25)
+    avail_for_sale = SingleFamilyHouse('6', '1200', '1', 'single', '.25')
     # WHY DOESN"T LINE ABOVE WORK? Isn't the formula:    new variable name = subclass.Class(detailed attributes)
+    # Tester Says:  TypeError: __init__() takes 4 positional arguments but 6 were given
 
     # # 8) Display the data using the accessor methods
 
