@@ -65,9 +65,19 @@ class MyGUI3:
         self.label2.pack(side='top')
 
         # In the bottom frame add labels with the classes you are taking this semester
-        self.label1 = tkinter.Label(self.bottom_frame, text='International Business')
-        self.label2 = tkinter.Label(self.bottom_frame, text='Principles of Importing/Exporting')
-        self.label3 = tkinter.Label(self.bottom_frame, text='Intro to Computer Programming 105')
+        self.label3 = tkinter.Label(self.bottom_frame, text='International Business')
+        self.label4 = tkinter.Label(self.bottom_frame, text='Principles of Importing/Exporting')
+        self.label5 = tkinter.Label(self.bottom_frame, text='Intro to Computer Programming 105')
+
+        # Pack the labels in the bottom frame, using 'top' argument to stack on top of each other
+        self.label3.pack(side='top')
+        self.label4.pack(side='top')
+        self.label5.pack(side='top')
+
+        # Pack the top and bottom frames
+        self.top_frame.pack()
+        self.bottom_frame.pack()
+
 
     # Create an instance of MyGUI3
 
@@ -141,6 +151,7 @@ class InchesConverterGUI:
         # A StringVar object is needed to associate w output label. Use the object's set method to store a string of
         # blank characters
         self.value = tkinter.StringVar()
+        self.value.set("centimeters")
 
         # Create a label and associate it w the StringVar object. Any value stored in the StringVar object will
         # automatically display in the label.
@@ -160,6 +171,7 @@ class InchesConverterGUI:
 
         # Pack the frames
         self.top_frame.pack()
+        self.mid_frame.pack()
         self.bottom_frame.pack()
 
         # Enter the tkinter main loop
@@ -184,4 +196,4 @@ class InchesConverterGUI:
     # Create instance of the InchesConverterGUI class.
 
 
-inches_conv = InchesConverterGUI
+inches_conv = InchesConverterGUI()
