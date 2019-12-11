@@ -23,7 +23,7 @@ class MPGConverterGUI:
         self.prompt_totalgallons = tkinter.Label(self.top_frame,
                                                  text=' Enter total number of gallons your gas tank holds: ')
         self.totalgallons_entry = tkinter.Entry(self.top_frame, width=15)
-        self.prompt_totalgallons = tkinter.Label(self.top_frame,
+        self.prompt_milespertank = tkinter.Label(self.top_frame,
                                                  text=' Enter total number miles you can drive on one tank: ')
         self.milespertank_entry = tkinter.Entry(self.top_frame, width=15)
 
@@ -31,6 +31,9 @@ class MPGConverterGUI:
 
         self.prompt_totalgallons.pack(side='left')
         self.totalgallons_entry.pack(side='left')
+
+        self.prompt_milespertank.pack(side='left')
+        self.milespertank_entry.pack(side='left')
 
         # Create the widgets for the middle frame
         self.descr_label = tkinter.Label(self.mid_frame, text='Converted to miles per gallon: ')
@@ -81,6 +84,6 @@ class MPGConverterGUI:
 
 
 # Create an instance of the MPGConverterGUI class
-mpg_conv = MPGConverterGUI
+mpg_conv = MPGConverterGUI()
 
-# PROBLEM: Green check, but when tested, no windows display/conversion
+# Working to green check status
