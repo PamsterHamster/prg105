@@ -86,7 +86,7 @@ class Violin:
 
         # charges
 
-        self.order_info = tkinter.StringVar
+        self.order_info = tkinter.StringVar()
         self.order_output = tkinter.Label(self.charges_frame, textvariable=self.order_info)
         self.order_output.pack()
 
@@ -96,6 +96,8 @@ class Violin:
         self.grade_frame.pack()
         self.add_ons_frame.pack()
         self.charges_frame.pack()
+        self.order_frame.pack()
+        self.size_frame.pack()
 
         tkinter.mainloop()
 
@@ -136,4 +138,4 @@ class Violin:
 
 violin = Violin()
 
-# PROBLEM: Order and Quit Buttons don't show
+# WORKING program with green check
