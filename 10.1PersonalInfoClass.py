@@ -7,6 +7,7 @@
 
 class PersonalData:
 
+    #  the information needed from the data of classes
     def __init__(self, first, last, address, age, phone):
         self.first = first
         self.last = last
@@ -14,6 +15,7 @@ class PersonalData:
         self.age = age
         self.phone = phone
 
+    # the formatting for the data information
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
 
@@ -26,11 +28,14 @@ class PersonalData:
     def phone(self):
         return '{}'.format(self.phone)
 
+    # the specific data used for the classes
+
 
 me_data1 = PersonalData('Pam', 'Becker', 'any library', 'young at heart', 'XXX-1234')
 friend_data2 = PersonalData('Teri', 'Tall', 'Heron Lane', '25 always', 'XXX-6578')
 fam_data3 = PersonalData('Mom', 'Isgreat', 'Crystal Lake', 'getting up there', '123-XXXX')
 
+#   Output
 print(PersonalData.fullname(me_data1))
 print(PersonalData.address(me_data1))
 print(PersonalData.age(me_data1))
