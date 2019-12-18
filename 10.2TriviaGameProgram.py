@@ -87,7 +87,9 @@ def ask(all_questions):
 
 main()
 
+"""
 
+#   USE Here (lines 92 - 145) for questions.py file, save into 10.2 Quiz folder
 class MusicQuiz:
 
     def __init__(self, ques, ans1, ans2, ans3, ans4, correct):
@@ -144,7 +146,7 @@ def __str__(self):
            '\n' + self.__possans4 + '\n' + self.__real_ans
 
 
-"""
+#  questions.py file ENDS HERE--copy above and put into own file, into 10.2 quiz folder
 
 #   Display output user question/answer selection
 def player_question(self):
