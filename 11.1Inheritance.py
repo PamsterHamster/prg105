@@ -1,5 +1,6 @@
 # import both the main Class and subclass
 import OfficeFurniture
+import Desk
 
 
 def main():
