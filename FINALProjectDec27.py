@@ -45,8 +45,8 @@ for i in range(0, 500):
     my_canvas_1.create_line(x1, y1, x2, y2, fill=random_color_code(), width=random_width)
     my_canvas_1.update()
     #   Note when last command above added, I lost the blue background and ALL buttons and quote--gone from view
-    # Random color bars end here. IDEA: add 7 circles in ROTGBIV colors https://www.youtube.com/watch?v=wb2yOsgEJJg
-    # each with one letter spelling out CHAKRAS
+    # Random color bars end here.
+    # To Canvas_2 add 7 circles in ROTGBIV colors https://www.youtube.com/watch?v=wb2yOsgEJJg  WORKING
 
 my_canvas_2 = Canvas(my_window, width=250, height=200, bg="black")
 my_canvas_2.grid(row=0, column=1)
@@ -58,11 +58,12 @@ o_3 = my_canvas_2.create_oval(110, 110, 150, 150, fill="yellow")
 o_2 = my_canvas_2.create_oval(135, 135, 175, 175, fill="orange")
 o_1 = my_canvas_2.create_oval(160, 160, 200, 200, fill="red")
 
+# To Canvas_2 also add the word "Chakras", ideally one letter inside of each circle created from above.
+# text_1 = my_canvas_2.create_text(100, 100, 12, fg="white", text="Chakras") **THIS LINE BREAKS THE ENTIRE PROGRM
+
 #   Below Text to Canvas not working yet:  https://www.youtube.com/watch?v=vjeHv-4a99E
 # def draw(my_canvas_2):
-# my_canvas_2.draw_text("CHAKRAS", (10,10), 12, "Black")
-
-#   my_canvas_2.draw_circle(fill="violet")
+# my_canvas_2.draw_text("CHAKRAS", (10, 10), 12, "white")
 
 #   The overall size I want for the title window
 # width_of_window = 900
@@ -105,7 +106,7 @@ frame_3.grid(row=2, column=0)
 frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
-##NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE
+##NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE * DO NOT use 'pack' method in the grid system
 
 label_8 = Label(my_window, width="10", height="3", bg="white")
 button_8 = Button(my_window, text="More info", width=8)
