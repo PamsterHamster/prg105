@@ -45,11 +45,24 @@ for i in range(0, 500):
     my_canvas_1.create_line(x1, y1, x2, y2, fill=random_color_code(), width=random_width)
     my_canvas_1.update()
     #   Note when last command above added, I lost the blue background and ALL buttons and quote--gone from view
-    # Random color bars end here. Do sth with blank canvas 2&3 below or delete IDEA: add 7 circles, ROTGBIV colors,
+    # Random color bars end here. IDEA: add 7 circles in ROTGBIV colors https://www.youtube.com/watch?v=wb2yOsgEJJg
     # each with one letter spelling out CHAKRAS
 
-my_canvas_2 = Canvas(my_window, width=250, height=200)
+my_canvas_2 = Canvas(my_window, width=250, height=200, bg="black")
 my_canvas_2.grid(row=0, column=1)
+o_7 = my_canvas_2.create_oval(10, 10, 50, 50, fill="violet")
+o_6 = my_canvas_2.create_oval(35, 35, 75, 75, fill="indigo")
+o_5 = my_canvas_2.create_oval(60, 60, 100, 100, fill="blue")
+o_4 = my_canvas_2.create_oval(85, 85, 125, 125, fill="lawngreen")
+o_3 = my_canvas_2.create_oval(110, 110, 150, 150, fill="yellow")
+o_2 = my_canvas_2.create_oval(135, 135, 175, 175, fill="orange")
+o_1 = my_canvas_2.create_oval(160, 160, 200, 200, fill="red")
+
+#   Below Text to Canvas not working yet:  https://www.youtube.com/watch?v=vjeHv-4a99E
+# def draw(my_canvas_2):
+# my_canvas_2.draw_text("CHAKRAS", (10,10), 12, "Black")
+
+#   my_canvas_2.draw_circle(fill="violet")
 
 #   The overall size I want for the title window
 # width_of_window = 900
@@ -92,8 +105,26 @@ frame_3.grid(row=2, column=0)
 frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
+##NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE
 
-##NEED TO ADD LABELS AND BUTTONS ABOVE
+label_8 = Label(my_window, width="10", height="3", bg="white")
+button_8 = Button(my_window, text="More info", width=8)
+label_8.grid(row=3, column=0)
+button_8.grid(row=3, column=0)
+
+label_9 = Label(my_window, width="10", height="3", bg="white")
+button_9 = Button(my_window, text="Take Quiz", width=8)
+label_9.grid(row=3, column=1)
+button_9.grid(row=3, column=1)
+
+label_10 = Label(my_window, width="10", height="3", bg="red")
+button_10 = Button(my_window, text="QUIT", width=8)
+label_10.grid(row=3, column=2)
+button_10.grid(row=3, column=2)
+
+
+#   Add code & functions to buttons 8-10 above      https://www.youtube.com/watch?v=XZ2G29ZUaII&feature=youtu.be
+#   see around 6:31"
 
 ####################################################################### https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the subclass relationship of the colored frames to master TKframe: around 17'11"
