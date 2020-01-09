@@ -58,26 +58,18 @@ o_3 = my_canvas_2.create_oval(110, 110, 150, 150, fill="yellow")
 o_2 = my_canvas_2.create_oval(135, 135, 175, 175, fill="orange")
 o_1 = my_canvas_2.create_oval(160, 160, 200, 200, fill="red")
 
-# To Canvas_2 also add the word "Chakras", ideally one letter inside of each circle created from above.
-# text_1 = my_canvas_2.create_text(100, 100, 12, fg="white", text="Chakras") **THIS LINE BREAKS THE ENTIRE PROGRM
-
-#   Below Text to Canvas not working yet:  https://www.youtube.com/watch?v=vjeHv-4a99E
-# def draw(my_canvas_2):
-# my_canvas_2.draw_text("CHAKRAS", (10, 10), 12, "white")
-
-#   The overall size I want for the title window
-# width_of_window = 900
-# height_of_window = 900
-
-#   To find the exact center of the screen placement for the title window
-# screen_width = my_window.winfo_screenwidth()
-# screen_height = my_window.winfo_screenheight()
-
-# x_coordinate = (screen_width/2) - (width_of_window/2)
-# y_coordinate = (screen_height/2) - (height_of_window/2)
-
-#   Placing the title window in the exact center of the screen
-# my_window.geometry("900x900+%d+%d")  # width_of_window, height_of_window, x_coordinate, y_coordinate
+# To Canvas_2 add one letter in each circle to spell "Chakras"
+text_11 = my_canvas_2.create_text(150, 20, text="... are like the software", font=28, fill="white")
+text_10 = my_canvas_2.create_text(165, 40, text="of the entire computer body, ", font=28, fill="white")
+text_9 = my_canvas_2.create_text(180, 60, text="so keep them updated ", font=28, fill="white")
+text_8 = my_canvas_2.create_text(185, 80, text="and debugged often. ", font=28, fill="white")
+text_7 = my_canvas_2.create_text(30, 30, text="C", font=28, fill="white")
+text_6 = my_canvas_2.create_text(55, 55, text="H", font=22, fill="white")
+text_5 = my_canvas_2.create_text(80, 80, text="A", font=22, fill="white")
+text_4 = my_canvas_2.create_text(105, 105, text="K", font=22, fill="white")
+text_3 = my_canvas_2.create_text(130, 130, text="R", font=22, fill="white")
+text_2 = my_canvas_2.create_text(155, 155, text="A", font=22, fill="white")
+text_1 = my_canvas_2.create_text(180, 180, text="S", font=22, fill="white")
 
 #   Size of title window and background color
 my_window.configure(width=900, height=900, bg="navy")
@@ -85,8 +77,10 @@ my_window.configure(width=900, height=900, bg="navy")
 #   my_window.geometry("%dx%d+0+0" % (My_window.winfo_screenwidth(), my_window.winfo_screenheight())
 # ABOVE SEGMENT WORKING
 
-###################### CREATING FRAMES IN OPENING PAGE#####WORKING#########https://www.youtube.com/watch?v=HTyN25rnla0
-# Create the frames, size & colors according to chakra color association
+#   *********** CREATING FRAMES IN OPENING PAGE *******WORKING ******  https://www.youtube.com/watch?v=HTyN25rnla0
+# Create the frames, size & colors according to chakra color association USING INHERITANCE. The Frame is SuperClass/
+# or Parent Class. The i.e. VioletFrame is the subclass/child class of SuperClass (Main/my_window) Frame
+# Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base
 
 frame_7 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="violet")
 frame_6 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="indigo")
@@ -106,28 +100,36 @@ frame_3.grid(row=2, column=0)
 frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
-##NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE * DO NOT use 'pack' method in the grid system
+# NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE * DO NOT use 'pack' method in the grid frame placement system
+# Labels 1-7 w Chakras are in the SubFrames
 
+
+# Labels 8-10 are in the regular SuperClass Frame
 label_8 = Label(my_window, width="10", height="3", bg="white")
-button_8 = Button(my_window, text="More info", width=8)
+button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt, Use New Class: Quiz
 label_8.grid(row=3, column=0)
 button_8.grid(row=3, column=0)
 
 label_9 = Label(my_window, width="10", height="3", bg="white")
-button_9 = Button(my_window, text="Take Quiz", width=8)
+button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt
 label_9.grid(row=3, column=1)
 button_9.grid(row=3, column=1)
 
+# QUIT button working-YAY!
 label_10 = Label(my_window, width="10", height="3", bg="red")
-button_10 = Button(my_window, text="QUIT", width=8)
+button_10 = Button(my_window, text="QUIT", width=8, command=my_window.destroy)
 label_10.grid(row=3, column=2)
 button_10.grid(row=3, column=2)
+
+
+# self.quit_button = tkinter.Button(self.my_window, text="Quit", command=self.my_window.destroy)
 
 
 #   Add code & functions to buttons 8-10 above      https://www.youtube.com/watch?v=XZ2G29ZUaII&feature=youtu.be
 #   see around 6:31"
 
-####################################################################### https://www.youtube.com/watch?v=HTyN25rnla0
+
+#   https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the subclass relationship of the colored frames to master TKframe: around 17'11"
 
 class VioletFrame(Frame):
@@ -218,6 +220,19 @@ frame_1.grid(row=2, column=2)
 
 """
 
+#   The overall size I want for the title window
+# width_of_window = 900
+# height_of_window = 900
+
+#   To find the exact center of the screen placement for the title window
+# screen_width = my_window.winfo_screenwidth()
+# screen_height = my_window.winfo_screenheight()
+
+# x_coordinate = (screen_width/2) - (width_of_window/2)
+# y_coordinate = (screen_height/2) - (height_of_window/2)
+
+#   Placing the title window in the exact center of the screen
+# my_window.geometry("900x900+%d+%d")  # width_of_window, height_of_window, x_coordinate, y_coordinate
 
 # Create a Menu Bar/display the Chakra colors when clicked  https://www.youtube.com/watch?v=3Q8mquTM8gA
 #   Menu Bar Functions   SECTION NOT WORKING/only main tk window appears
