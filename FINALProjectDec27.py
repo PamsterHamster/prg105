@@ -5,6 +5,7 @@ from tkinter import *
 
 
 """
+RUBRIC & GRADING CRITERIA:
 Create an original program that uses most of the skills that you have used in this class. The project must:
 
 Use a GUI interface: coding 5pts, usability&design 5pts
@@ -37,9 +38,9 @@ my_canvas_1.grid(row=0, column=0)
 # while True:     this makes loop go on forever, everything else lost . Below command of '500' limits the number times
 # it will execute (500) and then all buttons/quote/canvases show up when loop has finished.
 for i in range(0, 500):
-    x1 = randint(0, 200)
+    x1 = randint(0, 250)
     y1 = randint(0, 250)
-    x2 = randint(0, 200)
+    x2 = randint(0, 250)
     y2 = randint(0, 250)
     random_width = randint(1, 25)
     my_canvas_1.create_line(x1, y1, x2, y2, fill=random_color_code(), width=random_width)
@@ -58,7 +59,7 @@ o_3 = my_canvas_2.create_oval(110, 110, 150, 150, fill="yellow")
 o_2 = my_canvas_2.create_oval(135, 135, 175, 175, fill="orange")
 o_1 = my_canvas_2.create_oval(160, 160, 200, 200, fill="red")
 
-# To Canvas_2 add one letter in each circle to spell "Chakras"
+# To Canvas_2 add one letter in each circle to spell "Chakras" & the quote
 text_11 = my_canvas_2.create_text(150, 20, text="... are like the software", font=28, fill="white")
 text_10 = my_canvas_2.create_text(165, 40, text="of the entire computer body, ", font=28, fill="white")
 text_9 = my_canvas_2.create_text(180, 60, text="so keep them updated ", font=28, fill="white")
@@ -71,16 +72,72 @@ text_3 = my_canvas_2.create_text(130, 130, text="R", font=22, fill="white")
 text_2 = my_canvas_2.create_text(155, 155, text="A", font=22, fill="white")
 text_1 = my_canvas_2.create_text(180, 180, text="S", font=22, fill="white")
 
+# TESTING USING ENTIRE SCREEN IN CANVAS: add labels/buttons to new window w more chakras info..currently til line76
+my_canvas_7 = Canvas(my_window, width=250, height=200, bg="violet")
+my_canvas_7.grid(row=0, column=2)
+label_7text = Label(my_canvas_7, text="#7: CROWN", font=("Arial", 24, "bold"), bg="violet", fg="white")
+label_7text.pack(padx=50, pady=40)
+
+my_canvas_6 = Canvas(my_window, width=250, height=200, bg="indigo")
+my_canvas_6.grid(row=1, column=0)
+label_6text = Label(my_canvas_6, text="#6: THIRD EYE/BROW", font=("Arial", 22, "bold"), bg="indigo", fg="white")
+label_6text.pack(padx=10, pady=40)
+
+my_canvas_5 = Canvas(my_window, width=250, height=200, bg="royalblue")
+my_canvas_5.grid(row=1, column=1)
+label_5text = Label(my_canvas_5, text="#5: THROAT", font=("Arial", 24, "bold"), bg="blue", fg="white")
+label_5text.pack(padx=50, pady=40)
+
+my_canvas_4 = Canvas(my_window, width=250, height=200, bg="lawngreen")
+my_canvas_4.grid(row=1, column=2)
+label_4text = Label(my_canvas_4, text="#4: HEART", font=("Arial", 24, "bold"), bg="lawngreen", fg="white")
+label_4text.pack(padx=50, pady=40)
+
+my_canvas_3 = Canvas(my_window, width=250, height=200, bg="yellow")
+my_canvas_3.grid(row=2, column=0)
+label_3text = Label(my_canvas_3, text="#3: SOLAR PLEXUS", font=("Arial", 24, "bold"), bg="yellow", fg="white")
+label_3text.pack(padx=10, pady=40)
+
+my_canvas_2b = Canvas(my_window, width=250, height=200, bg="orange")
+my_canvas_2b.grid(row=2, column=1)
+label_2btext = Label(my_canvas_2b, text="#2: SPLEEN", font=("Arial", 24, "bold"), bg="orange", fg="white")
+label_2btext.pack(padx=52, pady=40)
+
+my_canvas_1b = Canvas(my_window, width=250, height=200, bg="red")
+my_canvas_1b.grid(row=2, column=2)
+label_1btext = Label(my_canvas_1b, text="#1: ROOT/BASE", font=("Arial", 24, "bold"), bg="red", fg="white")
+label_1btext.pack(padx=20, pady=40)
+
+# buttons 8-10 on main frame
+label_8 = Label(my_window, width="10", height="3", bg="white")
+button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt
+label_8.grid(row=3, column=0)
+button_8.grid(row=3, column=0)
+
+
+label_9 = Label(my_window, width="10", height="3", bg="white")
+button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt Use New Class: Quiz/GUI?
+label_9.grid(row=3, column=1)
+button_9.grid(row=3, column=1)
+
+# QUIT button working-YAY!
+label_10 = Label(my_window, width="10", height="3", bg="red")
+button_10 = Button(my_window, text="QUIT", width=8, command=my_window.destroy)
+label_10.grid(row=3, column=2)
+button_10.grid(row=3, column=2)
+
 #   Size of title window and background color
-my_window.configure(width=900, height=900, bg="navy")
+my_window.configure(width=900, height=900, bg="black")
 
-#   my_window.geometry("%dx%d+0+0" % (My_window.winfo_screenwidth(), my_window.winfo_screenheight())
+##   my_window.geometry("%dx%d+0+0" % (My_window.winfo_screenwidth(), my_window.winfo_screenheight())
 # ABOVE SEGMENT WORKING
-
+"""
 #   *********** CREATING FRAMES IN OPENING PAGE *******WORKING ******  https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the frames, size & colors according to chakra color association USING INHERITANCE. The Frame is SuperClass/
 # or Parent Class. The i.e. VioletFrame is the subclass/child class of SuperClass (Main/my_window) Frame
-# Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base
+# Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base(root)
+
+# Note: there are 3 'relief' options: FLAT, RAISED (3Dish), SUNKEN
 
 frame_7 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="violet")
 frame_6 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="indigo")
@@ -91,6 +148,8 @@ frame_2 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="orang
 frame_1 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="red")
 
 # Frame placement in the main window, grid system (row/column and 0,0 uppper left corner)
+# Do not combine the placement systems of pack, geometry, and grid as outlined in link below
+# https://python-course.eu/tkinter_layout_management.php
 
 frame_7.grid(row=0, column=2)
 frame_6.grid(row=1, column=0)
@@ -101,17 +160,18 @@ frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
 # NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE * DO NOT use 'pack' method in the grid frame placement system
-# Labels 1-7 w Chakras are in the SubFrames
+# Labels 1-7 w Chakras are in the SubFrames   : What is the code?
+# The Labels: Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base
 
 
 # Labels 8-10 are in the regular SuperClass Frame
 label_8 = Label(my_window, width="10", height="3", bg="white")
-button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt, Use New Class: Quiz
+button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt
 label_8.grid(row=3, column=0)
 button_8.grid(row=3, column=0)
 
 label_9 = Label(my_window, width="10", height="3", bg="white")
-button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt
+button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt Use New Class: Quiz/GUI?
 label_9.grid(row=3, column=1)
 button_9.grid(row=3, column=1)
 
@@ -129,6 +189,7 @@ button_10.grid(row=3, column=2)
 #   see around 6:31"
 
 
+#  ****OPERATION BLOCK SUBCLASS FRAMES (lines 80- 225)   AND TRY IT ALL VIA CANVAS
 #   https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the subclass relationship of the colored frames to master TKframe: around 17'11"
 
@@ -218,8 +279,13 @@ frame_3.grid(row=2, column=0)
 frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
-"""
+#  ABOVE WORKING ***REINSTALL ABOVE IF CANVAS METHOD NOT PREFERABLE
 
+
+
+
+
+# DON"T USE BELOW STUFF
 #   The overall size I want for the title window
 # width_of_window = 900
 # height_of_window = 900
