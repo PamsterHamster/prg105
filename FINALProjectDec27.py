@@ -2,6 +2,7 @@ from random import *
 from tkinter import *
 
 # from PIL import ImageTk, Image
+# print(help(Frame)) #https://www.youtube.com/watch?v=bOt1ilhZ3tk&feature=youtu.be
 
 
 """
@@ -72,6 +73,7 @@ text_3 = my_canvas_2.create_text(130, 130, text="R", font=22, fill="white")
 text_2 = my_canvas_2.create_text(155, 155, text="A", font=22, fill="white")
 text_1 = my_canvas_2.create_text(180, 180, text="S", font=22, fill="white")
 
+"""
 # TESTING USING ENTIRE SCREEN IN CANVAS: add labels/buttons to new window w more chakras info..currently til line76
 my_canvas_7 = Canvas(my_window, width=250, height=200, bg="violet")
 my_canvas_7.grid(row=0, column=2)
@@ -165,19 +167,19 @@ frame_1.grid(row=2, column=2)
 
 
 # Labels 8-10 are in the regular SuperClass Frame
-label_8 = Label(my_window, width="10", height="3", bg="white")
+label_8 = Label(my_window, width="10", height="3", bg="black")
 button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt
 label_8.grid(row=3, column=0)
 button_8.grid(row=3, column=0)
 
-label_9 = Label(my_window, width="10", height="3", bg="white")
+label_9 = Label(my_window, width="10", height="3", bg="black")
 button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt Use New Class: Quiz/GUI?
 label_9.grid(row=3, column=1)
 button_9.grid(row=3, column=1)
 
 # QUIT button working-YAY!
-label_10 = Label(my_window, width="10", height="3", bg="red")
-button_10 = Button(my_window, text="QUIT", width=8, command=my_window.destroy)
+label_10 = Label(my_window, width="15", height="3", bg="black")
+button_10 = Button(my_window, text="QUIT PROGRAM", width=12, command=my_window.destroy)
 label_10.grid(row=3, column=2)
 button_10.grid(row=3, column=2)
 
@@ -195,7 +197,8 @@ button_10.grid(row=3, column=2)
 
 class VioletFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -205,7 +208,8 @@ class VioletFrame(Frame):
 
 class IndigoFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -215,7 +219,8 @@ class IndigoFrame(Frame):
 
 class RoyalblueFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -225,7 +230,8 @@ class RoyalblueFrame(Frame):
 
 class LawngreenFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -235,7 +241,8 @@ class LawngreenFrame(Frame):
 
 class YellowFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -245,7 +252,8 @@ class YellowFrame(Frame):
 
 class OrangeFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -255,7 +263,8 @@ class OrangeFrame(Frame):
 
 class RedFrame(Frame):
     def __init__(self, the_window):
-        super().__init__()
+        Frame.__init__(self, master=the_window)
+        # super().__init__()
         self["height"] = 200
         self["width"] = 250
         self["relief"] = RAISED
@@ -270,6 +279,13 @@ frame_4 = LawngreenFrame(my_window)
 frame_3 = YellowFrame(my_window)
 frame_2 = OrangeFrame(my_window)
 frame_1 = RedFrame(my_window)
+# print(help(VioletFrame))  # https://www.youtube.com/watch?v=bOt1ilhZ3tk&feature=youtu.be
+# print(help(IndigoFrame))
+# print(help(BlueFrame))
+# print(help(LawngreenFrame))
+# print(help(YellowFrame))
+# print(help(OrangeFrame))
+# print(help(RedFrame))
 
 frame_7.grid(row=0, column=2)
 frame_6.grid(row=1, column=0)
@@ -279,6 +295,36 @@ frame_3.grid(row=2, column=0)
 frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
+# Labels for the Subclass Frames: Each color represents that particular Chakra name and number
+label_7 = Label(frame_7, text="#7: CROWN")
+label_7.grid(row=0, column=2)
+button_7info = Button(frame_7, text=" info")
+# button_7info.grid(row=0, columnspan=2)  # code for position placement? default center position overlaps the label
+
+label_6 = Label(frame_6, text="#6: THIRD EYE/BROW")
+label_6.grid(row=1, column=0)
+
+label_5 = Label(frame_5, text="#5: THROAT")
+label_5.grid(row=1, column=1)
+
+label_4 = Label(frame_4, text="#4: HEART")
+label_4.grid(row=1, column=2)
+
+label_3 = Label(frame_3, text="#3: SOLAR PLEXUS")
+label_3.grid(row=2, column=0)
+
+label_2 = Label(frame_2, text="#2: SPLEEN")
+label_2.grid(row=2, column=1)
+
+label_1 = Label(frame_1, text="#1: THROAT")
+label_1.grid(row=2, column=2)
+
+# CREATE THE Chakra Quiz via Class associated with main window frame 'Quiz' button
+
+# class Quiz:
+
+
+"""
 #  ABOVE WORKING ***REINSTALL ABOVE IF CANVAS METHOD NOT PREFERABLE
 
 
@@ -345,36 +391,14 @@ my_menubar.add_cascade(label='ChakraColors', menu=my_dropdown_menu)
 my_window.config(menu=my_menubar)
 
 
-#   Create Title Window Buttons w text (Chakra labels)  https://www.youtube.com/watch?v=qJtf0J0Vrkg&feature=youtu.be
-btn_8 = Button(my_window, text="Take a Quiz")
-btn_7 = Button(my_window, text="#7: Crown")
-btn_6 = Button(my_window, text="#6: 3rd Eye")
-btn_5 = Button(my_window, text="#5: Throat")
-btn_4 = Button(my_window, text="#4: Heart")
-btn_3 = Button(my_window, text="#3: Solar Plexus")
-btn_2 = Button(my_window, text="#2: Spleen")
-btn_1 = Button(my_window, text="#1: Base")
 
-# Create the grid screen/How many rows & columns available on the screen
 
-# Placement of Title Window Buttons  https://www.youtube.com/watch?v=qJtf0J0Vrkg&feature=youtu.be
-btn_8.grid(row=3, column=2)
-btn_7.grid(row=2, column=1)
-btn_6.grid(row=3, column=1)
-btn_5.grid(row=4, column=1)
-btn_4.grid(row=5, column=1)
-btn_3.grid(row=6, column=1)
-btn_2.grid(row=7, column=1)
-btn_1.grid(row=8, column=1)
+
+
 
 # Pack the buttons (only if use geometry method, not grid method)
 
 
-# Label
-label_1 = Label(my_window, text="Chakras are like the software of the entire computer body. ", bg="yellow")
-label_1.grid(row=0, column=0)
-
-# Consider building the main title window with Chakra 'Frames': https://www.youtube.com/watch?v=2j9sYld4uaM
 """
 
 my_window.mainloop()
