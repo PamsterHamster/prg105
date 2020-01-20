@@ -1,11 +1,11 @@
-# import tkinter as tk
 import time as tm
 from random import *
 from tkinter import *
 
-# from PIL import ImageTk, Image
-# print(help(Frame)) #https://www.youtube.com/watch?v=bOt1ilhZ3tk&feature=youtu.be
-
+# Import statements above should be (sometimes they hide, then program won't run):
+# import time as tm
+# from random import *
+# from tkinter import *
 
 """
 RUBRIC & GRADING CRITERIA:
@@ -22,11 +22,19 @@ Use data structures (2 sets): 5 pts
 Clean code, no warnings: 10 pts
 Be well documented (appropriate names and comments)
 
+# Pam's Summary: I hope, despite the hours of tutorials both in and out of class, and blocks encountered during my 
+# journey of this project, that what I have created is not the end. It's the Final Project for PRG 105 Fall term, but 
+# I would like to expand this project in the future (like getting the Digital Clock and Quiz to work via 
+# Inheritance/Frame method and conquer many of the questions which came up and still remain unanswered. I did overcome 
+# multiple roadblocks during this process. I also realize this entire Python language is just the tip of the iceberg. 
+# What I did miss was the help of an assistant and/or open lab hours---it probably would have speeded up my progress 
+# and/or gotten me further than what I ended here with. In any case, Thank You for your dedication to your students.-Pam
+
 """
 
 
-# Create the random color line graphics on the Canvas window https://www.youtube.com/watch?v=41GDcp4IIm4
-# Position: NW corner
+# Create the random color line graphics on the Canvas window https://www.youtube.com/watch?v=41GDcp4IIm4 WORKING
+# Position: NW corner--but can't say that officially w Grid System
 def random_color_code():
     hex_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
     color_code = '#'
@@ -51,6 +59,7 @@ for i in range(0, 500):
     my_canvas_1.update()
     #   Note when last command above added, I lost the blue background and ALL buttons and quote--gone from view
     # Random color bars end here.
+
     # ************************************************************************************************
     # To Canvas_2 add 7 circles in ROTGBIV colors https://www.youtube.com/watch?v=wb2yOsgEJJg  WORKING
 
@@ -78,7 +87,9 @@ text_2 = my_canvas_2.create_text(155, 155, text="A", font=22, fill="white")
 text_1 = my_canvas_2.create_text(180, 180, text="S", font=22, fill="white")
 
 # *********************************************************************
-
+# NOTE: I created the Main Window (Chakras Info) twice, via two working methods: Canvas and Frames via Inheritance.
+# I got the Canvas looking very similar to the Frame version, but chose to pursue the Frame method to play around with
+# Inheritance--that gave me many headaches (sidenote)
 """
 # TESTING USING ENTIRE SCREEN IN CANVAS: add labels/buttons to new window w more chakras info..currently til line76
 my_canvas_7 = Canvas(my_window, width=250, height=200, bg="violet")
@@ -142,12 +153,15 @@ my_window.configure(width=900, height=900, bg="black")
 """
 #   *********** CREATING FRAMES IN OPENING PAGE *******WORKING ******  https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the frames, size & colors according to chakra color association USING INHERITANCE. The Frame is SuperClass/
-# or Parent Class (here it's called my_window). The i.e. VioletFrame is the subclass/child class of SuperClass
-# (Main/my_window) Frame
+# or Parent Class (here it's called my_window).
+# i.e. VioletFrame is the subclass/child class of SuperClass
+
+# print(help(Frame)) #https://www.youtube.com/watch?v=bOt1ilhZ3tk&feature=youtu.beThe
+
 # Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base(root)
 
 # Note: there are 3 'relief' options: FLAT, RAISED (3Dish), SUNKEN
-
+# frame_8 = Frame(my_window, height=200, width=250, relief=FLAT, bd=8, bg="black")
 frame_7 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="violet")
 frame_6 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="indigo")
 frame_5 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="royalblue")
@@ -159,7 +173,7 @@ frame_1 = Frame(my_window, height=200, width=250, relief=RAISED, bd=8, bg="red")
 # Frame placement in the main window, grid system (row/column and 0,0 uppper left corner)
 # Do not combine the placement systems of pack, geometry, and grid as outlined in link below
 # https://python-course.eu/tkinter_layout_management.php
-
+# frame_8.grid(row=3, column=1)
 frame_7.grid(row=0, column=2)
 frame_6.grid(row=1, column=0)
 frame_5.grid(row=1, column=1)
@@ -169,12 +183,12 @@ frame_2.grid(row=2, column=1)
 frame_1.grid(row=2, column=2)
 
 
-# NEED TO ADD LABELS AND BUTTONS to FrameSubClassesABOVE * DO NOT use 'pack' method in the grid frame placement system
-# The Labels: Chakra #7: Crown  Chakra #6: Third Eye/Brow #5: Throat  #4: Heart  #3: Solar Plexus  #2: Spleen  #1: Base
-
-
 # For More Chakra Info: 'Click for Chakra 1, etc' button opens up new info in a loop label for each chakra
 # adapted from https://www.youtube.com/watch?v=NsSynSYrB2c
+# Note: Doing this added extra space on either side of Column 0, corresponding to longest label length in the Loop.
+# However, to fix it I would make each grid square (and SubFrame) larger, but it's too time consuming at this point.
+# I'll leave it for sth to improve on if I ever revisit this project in the future, and I hope to.
+
 
 def raise_frame(frame):
     frame.tkraise()
@@ -220,35 +234,18 @@ raise_frame(Home)
 # root.mainloop()
 
 """
-# OPTION 2: Adding a scrollbar tied to button 8 "More Info" adapted https://python-course.eu/tkinter_text_widget.php
-
-# need to bind text to button 9 via a command line
-def open_scroll():
-    button_9.grid(row=3, column=1) = Tk()
-    button_9.pack()
-T = TkText(button_9, height=20, width=50)
-S = Tk.Scrollbar(button_9, command=text1.yview)
-S.pack(side=tk.RIGHT, fill=tk.Y)
-T.pack(side=tk.LEFT, fill=tk.Y)
-S.config(command=T.yview)
-T.config(yscrollcommand=S.set)
-quote = "There are seven chakras, aligning from the base of your spine (#1: Root/Base) to the top of your head " \
-        "(#7: Crown).Each is associated with a designated location, name, symbol & element, musical note, gemstone, " \
-        "astrology sign, planet, sense, and food. When the chakras are in alignment you will be healthy and have " \
-        "good energy. If any of the chakras are weak or out of alignment, associated physical and/or mental ailments " \
-        "will develop. Chakras are kept in balance through daily meditation, best led by an experienced Yoga Master. "
-
-T.insert(tk.END, quote)
-
 # Labels 8-10 are in the regular SuperClass Frame
+# update: Label/Button 8 got turned into the Home/More Chakra Info For Loop
 label_8 = Label(my_window, width="10", height="3", bg="black")
 button_8 = Button(my_window, text="More info", width=8)  # NEEDS COMMAND=prompt
 label_8.grid(row=3, column=0)
 button_8.grid(row=3, column=0)
 
-
-label_9 = Label(my_window, width="10", height="3", bg="black")
-button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND=prompt Use New Class: Quiz/GUI?
+# update: Label/Button 9 got abandoned for the Digital Clock (procedural mode). Digital Clock was Backup Plan.
+# The original plan was to have this button start the GUI Quiz, but I couldn't get/find the correct command to get it 
+# started. The Quiz code is still here in this program, below, just commented out.
+label_9 = Label(my_window, width="15", height="3", bg="black")
+button_9 = Button(my_window, text="Take Quiz", width=8)  # NEEDS COMMAND to start Quiz/GUI
 label_9.grid(row=3, column=1)
 button_9.grid(row=3, column=1)
 
@@ -260,12 +257,7 @@ label_10.grid(row=3, column=2)
 button_10.grid(row=3, column=2)
 
 
-# self.quit_button = tkinter.Button(self.my_window, text="Quit", command=self.my_window.destroy)
-
-#   Add code & functions to buttons 8-10 above      https://www.youtube.com/watch?v=XZ2G29ZUaII&feature=youtu.be
-#   see around 6:31"
-
-#  ****OPERATION BLOCK SUBCLASS FRAMES (lines 80- 225)   AND TRY IT ALL VIA CANVAS
+#  ****OPERATION BLOCK SUBCLASS FRAMES************
 #   https://www.youtube.com/watch?v=HTyN25rnla0
 # Create the subclass relationship of the colored frames to master TKframe: around 17'11"
 
@@ -279,21 +271,6 @@ class VioletFrame(Frame):
         self["relief"] = RAISED
         self["bd"] = 15
         self["bg"] = "violet"
-
-
-"""
-        # https://www.youtube.com/watch?v=N9rPxEvfw1M&feature=youtu.be  2:02'
-
-        self.display_string = StringVar()
-        self.button = Button(self, text="Click Me", command=self.display_output)
-        self.display_label = Label(self, textvariable=self.display_string, relief="solid")
-
-        self.button.grid(row=0, column=2)
-        self.display_label.grid(row=1, column=1)
-
-    def display_output(self):
-        self.display_string.set("Crown above the head")
-"""
 
 
 class IndigoFrame(Frame):
@@ -361,7 +338,108 @@ class RedFrame(Frame):
         self["bd"] = 15
         self["bg"] = "red"
 
+    # *********************************************************************
 
+
+"""
+    # GUI Quiz adapted from Ch10 assignment and https://www.youtube.com/watch?v=zVv6EbJlpqs NOT FINISHED, NOT WORKING
+
+    # from tkinter import *  DONE ALREADY
+
+
+q = ["If your Root chakra is out of alignment, you are at risk for which addiction?", "If your Spleen chakra is out \
+    of alignment, you are at risk for which addiction?", "If your Solar Plexus chakra is out of alignment, you are at \
+    risk for which addiction?", "If your Heart chakra is out of alignment, you are at risk for which addiction?",
+     "If your Throat chakra is out of alignment, you are at risk for which addiction?", "If you experience trouble \
+    with respiratory ailments, work on which chakra?", "If you experience trouble with blood sugar ailments, work on \
+    which chakra?", "If you experience trouble with reproductive system ailments, work on which chakra?", "If you \
+    experience trouble with blood pressure ailments, work on which chakra? ?", "If you experience trouble with sinus \
+    ailments, work on which chakra?", ]
+
+options = ["food", "cigarettes", "compulsive gambling", "sex"], ["homework", "sugar", "pets", "video games"], \
+          ["food", "water sports", "sunshine", "shopping"], ["sex", "animals", "food", "cigarettes"], \
+          ["nasal inhalants", "caffeine", "wind", "travel"], ["spleen", "crown", "throat", "heart"], \
+          ["solar plexus", "spleen", "heart", "brow"], ["crown", "heart", "solar plexus", "root"], ["crown", "throat",
+                                                                                                    "solar plexus",
+                                                                                                    "heart"], ["root",
+                                                                                                               "heart",
+                                                                                                               "throat",
+                                                                                                               "brow"]
+
+a = [4, 2, 1, 4, 1, 3, 1, 4, 4, 3]
+
+
+#    answers in order of questions: sex, sugar, food, cigarettes, nasal inhalants, throat, solar plexus, root, heart,
+#    throat
+
+class Quiz(Frame):
+    def __init__(self, the_window):
+        Frame.__init__(self, master=the_window)
+        self.the_window = the_window
+        self.the_window.title("Chakra Quiz")
+        self.opt_selected = IntVar()
+        self.qn = 0
+        self.correct = 0
+        self.ques = self.create_q(the_window, self.qn)
+        self.opts = self.create_options(the_window, 4)
+        self.display_q(self.qn)
+        self.button = Button(the_window, text="Back", command=self.back_btn)
+        # self.button.pack(side=BOTTOM)
+        self.button = Button(the_window, text="Next", command=self.next_btn)
+        # self.button.pack(side=BOTTOM)
+
+    def create_q(self, master, qn):
+        w = Label(master, text=q[qn])
+        # w.pack(side=TOP)
+        return w
+
+    def create_options(self, master, n):
+        b_val = 0
+        b = []
+        while b_val < n:
+            btn = Radiobutton(master, text="text", variable=self.opt_selected, value=b_val + 1)
+            b.append(btn)
+            # btn.pack(side=TOP, anchor="w")
+            b_val = b_val + 1
+        return b
+
+    def display_q(self, qn):
+        b_val = 0
+        self.opt_selected.set(0)
+        self.ques["text"] = q[qn]
+        for op in options[qn]:
+            self.opts[b_val]["text"] = op
+            b_val = b_val + 1
+
+    def check_q(self, qn):
+        if self.opt_selected.get() == a[qn]:
+            return True
+        return False
+
+    def print_results(self):
+        print("Score: ", self.correct, "/", len(q))
+
+    def back_btn(self):
+        print("go back")
+
+    def next_btn(self):
+        if self.check_q(self.qn):
+            print("Correct!")
+            self.correct += 1
+        else:
+            print("Sorry. That isn't correct")
+        self.qn = self.qn + 1
+        if self.qn >= len(q):
+            self.print_results()
+        else:
+            self.display_q(self.qn)
+
+
+# my_window = Tk()
+# my_window.geometry("500x300")
+app = Quiz(my_window)
+"""
+# frame_8 = Quiz(my_window)
 frame_7 = VioletFrame(my_window)
 frame_6 = IndigoFrame(my_window)
 frame_5 = RoyalblueFrame(my_window)
@@ -377,6 +455,7 @@ frame_1 = RedFrame(my_window)
 # print(help(OrangeFrame))
 # print(help(RedFrame))
 
+# frame_8.grid(row=3, column=1)
 frame_7.grid(row=0, column=2)
 frame_6.grid(row=1, column=0)
 frame_5.grid(row=1, column=1)
@@ -389,7 +468,7 @@ frame_1.grid(row=2, column=2)
 label_7 = Label(frame_7, text="#7: CROWN", bg="black", fg="white")
 label_7.grid(row=0, column=2)
 # button_7info = Button(frame_7, text=" info")
-# button_7info.grid(row=0, columnspan=2)  # code position placement? default center position overlaps label
+# button_7info.grid(row=0, columnspan=2)  # code position placement? default center position in each grid overlaps label
 
 label_6 = Label(frame_6, text="#6: THIRD EYE/BROW", bg="black", fg="white")
 label_6.grid(row=1, column=0)
@@ -423,32 +502,34 @@ label_1.grid(row=2, column=2)
 # button_1info = Button(frame_1, text=" info")
 # button_1info.grid(row=2, columnspan=2)
 
-# CREATE THE Chakra Quiz via Class associated with main window frame 'Quiz' button
+#  ABOVE WORKING *Use this version instead of overall Canvas
 
-# class Quiz:
-
-
-#  ABOVE WORKING ***REINSTALL ABOVE IF CANVAS METHOD NOT PREFERABLE
-# Clock Below working...use if can't get scrollbar adapted.
+# Digital Clock Below WORKING via Procedural Method...use if can't get clock via inheritance version running
 
 def display_time():
     current_time = tm.strftime("%H:%M:%S")
-    clock_label["text"] = current_time
+    clock_label1["text"] = current_time
     my_window.after(200, display_time)
 
 
-clock_label = Label(my_window, width="15", height="3", font=80, bg="black", fg="red")
-clock_label.grid(row=3, column=1)
+clock_label1 = Label(my_window, width="15", height="3", font="Times 14", bg="black", fg="lawngreen")
+clock_label1.grid(row=3, column=1)
+# clock_label2 = Label(my_window, text="Time to work with Chakras!", width="15", height="3", font=14, bg="black", fg="orange")
+# clock_label2.grid(row=3, column=1) # Same problem as labeling Chakra Frames: How to place labels and/or buttons
+# besides center position only, using grid system?
 display_time()
 
-""""
-# Install Digital Clock re Class/inheritance: FINISH https://www.youtube.com/watch?v=TiTkgTrHw5g
+"""
+# Install Digital Clock re Class/inheritance: https://www.youtube.com/watch?v=TiTkgTrHw5g NOT WORKING YET
+# Problems getting it working in the subclassFrame / Grid method
 
-class DigitalClock:
+
+class DigitalClock(Frame):
     def __init__(self, the_window):
+        Frame.__init__(self, master=the_window)
         self.the_window = the_window
         self.the_window.title("Digital Clock")
-        self.clock_label = tk.Label(self.the_window, font="ariel 24", bg="black", fg="red")
+        self.clock_label = tk.Label(self.the_window, font="Times 24", bg="black", fg="yellow")
         self.clock_label.grid(row=3, column=1)
         self.display_time()
 
@@ -458,25 +539,8 @@ class DigitalClock:
         self.the_window.after(200, self.display_time)
 
 
-my_window = tk.Tk()
-my_digital_clock = DigitalClock(my_window)
-
-# DON"T USE BELOW STUFF
-#   The overall size I want for the title window
-# width_of_window = 900
-# height_of_window = 900
-
-#   To find the exact center of the screen placement for the title window
-# screen_width = my_window.winfo_screenwidth()
-# screen_height = my_window.winfo_screenheight()
-
-# x_coordinate = (screen_width/2) - (width_of_window/2)
-# y_coordinate = (screen_height/2) - (height_of_window/2)
-
-#   Placing the title window in the exact center of the screen
-# my_window.geometry("900x900+%d+%d")  # width_of_window, height_of_window, x_coordinate, y_coordinate
-
-
+my_window = Tk()
+my_digital_clock = DigitalClock(the_window)
 """
 
 my_window.mainloop()
